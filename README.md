@@ -4,7 +4,7 @@ This is an image for successfully verifying a domain name hosted on Route53 with
 
 This is can be run regularly (i.e. daily) to ensure that a certificate is up to date, and is well suited as an alternative to HTTP verification, when this is inconvenient such as when running highly distributed HTTP servers.
 
-This uses (dehydrated)[https://github.com/lukas2511/dehydrated] to communicate with Let's Encrypt and (lexicon)[https://github.com/AnalogJ/lexicon] to interact with AWS Route53
+This uses [dehydrated](https://github.com/lukas2511/dehydrated) to communicate with Let's Encrypt and [lexicon](https://github.com/AnalogJ/lexicon) to interact with AWS Route53
 
 ## Usage
 
@@ -41,4 +41,4 @@ In the following example, replace the access key and secret key with that of the
 
 `docker run --rm -ti -e PROVIDER=route53 -e LEXICON_ROUTE53_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE -e LEXICON_ROUTE53_ACCESS_SECRET=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY -v /var/certs:/work/certs waldher/letsencrypt-route53-auto -d DOMAIN`
 
-Your certificates will then be stored in `/var/certs`. Monitor stdout for any errors. Also note that renewals will be skipped for certificates with more than 30 days left before expiration. Further command line options can be found in the (dehydrated)[https://github.com/lukas2511/dehydrated] documentation.
+Your certificates will then be stored in `/var/certs`. Monitor stdout for any errors. Also note that renewals will be skipped for certificates with more than 30 days left before expiration. Further command line options can be found in the [dehydrated](https://github.com/lukas2511/dehydrated) documentation.
