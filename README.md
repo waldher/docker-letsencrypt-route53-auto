@@ -39,6 +39,6 @@ First, you'll need an AWS access key and secret to use. Using a key that's as na
 
 In the following example, replace the access key and secret key with that of the above mentioned IAM user, and replace DOMAIN with the domain you wish to verify.
 
-`docker run --rm -ti -e PROVIDER=route53 -e LEXICON_ROUTE53_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE -e LEXICON_ROUTE53_ACCESS_SECRET=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY -v /var/certs:/work/certs waldher/letsencrypt-route53-auto -d DOMAIN`
+`docker run --rm -ti -e PROVIDER=route53 -e LEXICON_ROUTE53_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE -e LEXICON_ROUTE53_ACCESS_SECRET=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY -v /var/acme-accounts:/work/accounts -v /var/certs:/work/certs waldher/letsencrypt-route53-auto -d DOMAIN`
 
 Your certificates will then be stored in `/var/certs`. Monitor stdout for any errors. Also note that renewals will be skipped for certificates with more than 30 days left before expiration. Further command line options can be found in the [dehydrated](https://github.com/lukas2511/dehydrated) documentation.
